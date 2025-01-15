@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:expense_tracker/models/expense.dart';
 
 class ExpenseItem extends StatelessWidget {
@@ -10,6 +9,22 @@ class ExpenseItem extends StatelessWidget {
 
   @override
   Widget build(context) {
-    return Card(child: Text(expense.title));
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        child: Column(
+          children: [
+            Text(expense.title),
+            const SizedBox(height: 4),
+            Row(
+              children: [
+                Text(
+                    'Rp. ${NumberFormat('#,###', 'id_ID').format(expense.amount)}'),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
