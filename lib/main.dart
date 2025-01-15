@@ -1,9 +1,9 @@
-import 'package:expense_tracker/expense.dart';
+import 'package:expense_tracker/expenses.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Expense(),
+    home: Expenses(),
     debugShowCheckedModeBanner: false,
   ));
 }
