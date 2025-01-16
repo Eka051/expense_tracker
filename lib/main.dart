@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     home: Expenses(),
+    theme: ThemeData(useMaterial3: true),
     debugShowCheckedModeBanner: false,
   ));
 }
