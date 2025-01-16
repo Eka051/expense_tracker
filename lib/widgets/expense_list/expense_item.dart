@@ -20,6 +20,14 @@ class ExpenseItem extends StatelessWidget {
               children: [
                 Text(
                     'Rp. ${NumberFormat('#,###', 'id_ID').format(expense.amount)}'),
+                    const Spacer(),
+                    Row(
+                      children: [
+                        Icon(Icons.calendar_today, size: 16),
+                        const SizedBox(width: 8),
+                        Text(expense.date.toString()),
+                      ],
+                    )
               ],
             ),
           ],
