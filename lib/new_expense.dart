@@ -37,9 +37,12 @@ class _NewExpenseState extends State<NewExpense> {
             controller: _amountController,
             keyboardType: TextInputType.number,
             inputFormatters: [
-              FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+              FilteringTextInputFormatter.allow(RegExp(r'[0-9.,]')),
             ],
-            decoration: InputDecoration(labelText: 'Amount'),
+            decoration: InputDecoration(
+              labelText: 'Amount',
+              prefix: Text('Rp. '),
+            ),
           ),
           const SizedBox(
             height: 10,
