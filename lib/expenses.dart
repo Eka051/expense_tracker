@@ -36,29 +36,36 @@ class _ExpensesState extends State<Expenses> {
   void _openAddExpenseForm() {
     showModalBottomSheet(
       context: context,
-      builder: (ctx) => NewExpense(),
+      builder: (ctx) => NewExpense(onAddExpense: _addExpense),
     );
+  }
+
+  void _addExpense(Expense expense) {
+    setState(() {
+      _registeredExpenses.add(expense);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 55, 113, 212),
-          foregroundColor: Colors.white,
-          title: const Text('Expenses Tracker'),
-          actions: [
-            IconButton(
-                icon: const Icon(Icons.add), onPressed: _openAddExpenseForm),
-          ],
-        ),
-        body: Column(
-          children: [
-            Text('Chart'),
-            Expanded(
-              child: ExpensesList(expenses: _registeredExpenses),
-            ),
-          ],
-        ));
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 55, 113, 212),
+        foregroundColor: Colors.white,
+        title: const Text('Expenses Tracker'),
+        actions: [
+          IconButton(
+              icon: const Icon(Icons.add), onPressed: _openAddExpenseForm),
+        ],
+      ),
+      body: Column(
+        children: [
+          Text('Chart'),
+          Expanded(
+            child: ExpensesList(expenses: _registeredExpenses),
+          ),
+        ],
+      ),
+    );
   }
 }
