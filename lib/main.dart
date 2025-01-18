@@ -22,10 +22,13 @@ void main() {
           backgroundColor: kColorScheme.primaryContainer,
         ),
       ),
-      textTheme: ThemeData().textTheme.apply(
-            bodyColor: kColorScheme.onPrimaryContainer,
-            displayColor: kColorScheme.onPrimaryContainer,
-          ),
+      textTheme: ThemeData().textTheme.copyWith(
+        titleLarge: TextStyle(
+          fontSize: 14,
+          fontWeight: FontWeight.normal,
+          color: kColorScheme.onSecondaryContainer,
+        ),
+      )
     ),
     debugShowCheckedModeBanner: false,
   ));
