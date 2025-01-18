@@ -2,6 +2,7 @@ import 'package:expense_tracker/new_expense.dart';
 import 'package:expense_tracker/widgets/expense_list/expenses_list.dart';
 import 'package:flutter/material.dart';
 import 'package:expense_tracker/models/expense.dart';
+import 'package:flutter/services.dart';
 
 class Expenses extends StatefulWidget {
   const Expenses({super.key});
@@ -37,7 +38,10 @@ class _ExpensesState extends State<Expenses> {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
-      builder: (ctx) => NewExpense(onAddExpense: _addExpense),
+      builder: (ctx) => AnnotatedRegion(
+        value: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
+        child: NewExpense(onAddExpense: _addExpense),
+      ),
     );
   }
 
