@@ -8,28 +8,27 @@ void main() {
   runApp(MaterialApp(
     home: Expenses(),
     theme: ThemeData().copyWith(
-      colorScheme: kColorScheme,
-      appBarTheme: const AppBarTheme().copyWith(
-        backgroundColor: kColorScheme.onPrimaryContainer,
-        foregroundColor: kColorScheme.primaryContainer,
-      ),
-      cardTheme: const CardTheme().copyWith(
-        color: kColorScheme.secondaryContainer,
-        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      ),
-      elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: kColorScheme.primaryContainer,
+        colorScheme: kColorScheme,
+        appBarTheme: const AppBarTheme().copyWith(
+          backgroundColor: kColorScheme.onPrimaryContainer,
+          foregroundColor: kColorScheme.primaryContainer,
         ),
-      ),
-      textTheme: ThemeData().textTheme.copyWith(
-        titleLarge: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.normal,
-          color: kColorScheme.onSecondaryContainer,
+        cardTheme: const CardTheme().copyWith(
+          color: kColorScheme.secondaryContainer,
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         ),
-      )
-    ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: kColorScheme.primaryContainer,
+          ),
+        ),
+        textTheme: ThemeData().textTheme.copyWith(
+              titleLarge: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w700,
+                color: kColorScheme.onSecondaryContainer,
+              ),
+            )),
     debugShowCheckedModeBanner: false,
   ));
 }
