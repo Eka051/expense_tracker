@@ -178,10 +178,6 @@ class _NewExpenseState extends State<NewExpense> {
               ),
               ElevatedButton(
                 onPressed: _submitExpenseData,
-                // style: ElevatedButton.styleFrom(
-                //   backgroundColor: Colors.deepPurple,
-                //   foregroundColor: Colors.white,
-                // ),
                 child: const Text('Save Expense'),
               ),
             ],
